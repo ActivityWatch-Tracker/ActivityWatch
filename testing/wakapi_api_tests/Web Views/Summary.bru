@@ -1,0 +1,16 @@
+meta {
+  name: Summary
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{BASE_URL}}/summary
+  body: none
+  auth: none
+}
+
+assert {
+  res.body: contains </html>
+  res.body: contains <span class="text-sm">Logout</span>
+}
